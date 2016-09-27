@@ -1,5 +1,5 @@
 {
-  "name": "gif-api",
+  "name": "fetch-gifs",
   "description": "Fetch gifs based on requested payload",
   "version": "0.1.0",
   "private": true,
