@@ -1,37 +1,44 @@
 const axios = require('axios');
 const _shuffle = require('lodash/shuffle');
 
-const giphy = require('./giphy');
-const riffsy = require('./riffsy');
+module.exports = (searchTerm, config) => {
+  // Pass in the searchTerm or query to giphy and riffsy
+  let giphyResult = require('./giphy')(searchTerm);
+  let riffsyResult = require('./riffsy')(searchTerm);
 
-module.exports = (searchTerm) => {
-  let giphyResult = giphy(searchTerm);
-  let riffsyResult = riffsy(searchTerm);
+  // Grab the user's config if exists or just return a default
+  let offset = config ? config.offset :  0;
+  let limit = config ? config.limit : 30;
 
+  // Return a promise to the user based on their search query
   return giphyResult.then(gip => {
     return riffsyResult.then(rif => {
-      return new Promise(function(resolve, reject) {
+      return new Promise((resolve, reject) => {
+
+        const gifs = _shuffle(gip.concat(rif)).slice(offset, limit);
         return resolve(Object.assign({},
-          _shuffle(gip.concat(rif))
+          {
+            data: gifs,
+            hasNext: gifs.length === limit - offset
+          }
         ));
       });
     })
     .catch(error => {
-      return new Promise(function(resolve, reject) {
-        return reject('request failed');
+      return new Promise((resolve, reject) => {
+        return reject({
+          reason: error.message,
+          code: '422'
+        });
       });
-      return error.code === 'ENOTFOUND' ?
-        'Please check your network connection' :
-        'Request could not be understood';
     });
   })
   .catch(error => {
-    return new Promise(function(resolve, reject) {
-      return reject({ reason: 'dont know', code: '405' });
+    return new Promise((resolve, reject) => {
+      return reject({
+        reason: error.message,
+        code: '422'
+      });
     });
-
-    return error.code === 'ENOTFOUND' ?
-      'Please check your network connection' :
-      'Request could not be understood';
   });
 }

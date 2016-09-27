@@ -3,10 +3,6 @@
   "description": "Fetch gifs based on requested payload",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www",
-    "debug": "DEBUG=gif-api:* npm start"
-  },
   "dependencies": {
     "axios": "^0.14.0",
     "lodash": "^4.16.2"
