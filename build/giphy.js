@@ -3,7 +3,7 @@
 var axios = require('axios');
 
 module.exports = function (searchTerm) {
-  return axios.get('http://api.giphy.com/v1/gifs/search?q=' + searchTerm + '&api_key=dc6zaTOxFJmzC&limit=50').then(function (result, done) {
+  return axios.get('https://api.giphy.com/v1/gifs/search?q=' + searchTerm + '&api_key=dc6zaTOxFJmzC&limit=50').then(function (result, done) {
     var payload = result.data.data;
 
     return payload.map(function (data) {

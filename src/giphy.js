@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports = searchTerm => {
-   return axios.get(`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=dc6zaTOxFJmzC&limit=50`)
+   return axios.get(`https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=dc6zaTOxFJmzC&limit=50`)
     .then((result, done) => {
       let payload = result.data.data;
 
