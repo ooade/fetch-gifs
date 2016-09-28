@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-module.exports = (searchTerm) => {
+module.exports = searchTerm => {
    return axios.get(`https://api.riffsy.com/v1/search?key=LIVDSRZULELA&tag=${searchTerm}`)
     .then(result => {
       let payload = result.data.results;

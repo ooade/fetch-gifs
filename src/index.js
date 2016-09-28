@@ -16,10 +16,11 @@ module.exports = (searchTerm, config) => {
       return new Promise((resolve, reject) => {
 
         const gifs = _shuffle(gip.concat(rif)).slice(offset, limit);
+        
         return resolve(Object.assign({},
           {
             data: gifs,
-            hasNext: gifs.length === limit - offset
+            more: gifs.length === limit - offset
           }
         ));
       });

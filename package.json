@@ -1,8 +1,7 @@
 {
   "name": "fetch-gifs",
-  "description": "Fetch gifs based on requested payload",
+  "description": "Easily Search throught gifs based on search term",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "axios": "^0.14.0",
     "lodash": "^4.16.2"
