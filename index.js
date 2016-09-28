@@ -1,3 +1,3 @@
-const fetchGifs = require('./src');
+const fetchGifs = require('./build');
 
 module.exports = fetchGifs;

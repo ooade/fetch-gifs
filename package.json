@@ -1,9 +1,14 @@
 {
   "name": "fetch-gifs",
   "description": "Easily Search throught gifs based on search term",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "dependencies": {
     "axios": "^0.14.0",
     "lodash": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0"
   }
 }
