@@ -6,9 +6,27 @@
     "axios": "^0.14.0",
     "lodash": "^4.16.2"
   },
+  "author": "Ademola Adegbuyi <marhyorh@gmail.com>",
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-stage-0": "^6.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marhyorh/FetchGifs.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marhyorh/FetchGifs/issues"
+  },
+  "homepage": "https://github.com/marhyorh/FetchGifs",
+  "keywords": [
+    "gif",
+    "gifs",
+    "giphy",
+    "riffsy",
+    "react",
+    "es6"
+  ]
 }
