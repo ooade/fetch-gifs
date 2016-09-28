@@ -1,10 +1,10 @@
 # FetchGifs
-We help you fetch your GIFs, just pass in the search term and you are good to go! 
+We help you fetch your GIFs, just pass in the search term and you are good to go!
 Fetch-gif requires a search term and optional arguments(offset and limit) and returns a [Promise](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise)!
 
 ### Getting Started?
 Simple! Just run:
-`npm install -save fetch-gif`
+`npm install -save fetch-gifs`
 
 ### A Simple Request
 ```js
@@ -73,6 +73,6 @@ fetchGifs(name, { offset, limit }).then(res => {
 
 ### Todo
 - [ ] Add test spec
-  
+
 ## Contributing
 Contributing to this repo is simple. We prefer single quotes, descriptive commit messages, commiting to a new branch indicating what changed e.g fix/fixed-async-flow, feature/added-test, feat/added-test. Push the new branch!
