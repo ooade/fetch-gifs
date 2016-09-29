@@ -1,5 +1,6 @@
 # FetchGifs
 [![Build Status](https://travis-ci.org/marhyorh/FetchGifs.svg?branch=master)](https://travis-ci.org/marhyorh/FetchGifs)
+
 We help you fetch your GIFs, just pass in the search term and you are good to go!
 Fetch-gif requires a search term and optional arguments(offset and limit) and returns a [Promise](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise)!
 
