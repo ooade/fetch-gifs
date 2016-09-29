@@ -6,6 +6,11 @@
     "axios": "^0.14.0",
     "lodash": "^4.16.2"
   },
+  "scripts": {
+    "build": "rimraf -rf build && babel src -d build && ./cleanup.sh && npm run minify && npm run remove-unused",
+    "minify": "cd build && minify * --output index.js",
+    "remove-unused": "rm -rf bui*/giph* bui*/ind* bui*/rif*"
+  },
   "author": "Ademola Adegbuyi <marhyorh@gmail.com>",
   "devDependencies": {
     "babel-cli": "^6.14.0",
