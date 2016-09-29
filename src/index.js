@@ -1,17 +1,20 @@
 import axios from 'axios';
 import { shuffle } from 'lodash';
 
+import giphy from './giphy';
+import riffsy from './riffsy';
+
 module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
 
   // Pass in the searchTerm or query to giphy and riffsy
-  let giphyResult = require('./giphy')(searchTerm);
-  let riffsyResult = require('./riffsy')(searchTerm);
+  let giphyResult = giphy(searchTerm);
+  let riffsyResult = riffsy(searchTerm);
 
   const gifPromise = (error) => {
     return new Promise((resolve, reject) => {
       return reject({
         reason: error.message,
-        code: '422'
+        code: 422
       });
     });
   };
