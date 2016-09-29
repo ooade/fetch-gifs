@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rimraf -rf build && babel src -d build && ./src2build.sh && npm run minify",
     "minify": "cd build && minify g* --output giphy.js && minify i* --output index.js && minify r* --output riffsy.js",
-    "test": "tape -r babel-register tests/**/*.js"
+    "test": "tape -r babel-core/register tests/**/*.js"
   },
   "author": "Ademola Adegbuyi <marhyorh@gmail.com>",
   "devDependencies": {
