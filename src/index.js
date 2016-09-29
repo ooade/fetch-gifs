@@ -6,6 +6,15 @@ module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
   let giphyResult = require('./giphy')(searchTerm);
   let riffsyResult = require('./riffsy')(searchTerm);
 
+  const gifPromise = (error) => {
+    return new Promise((resolve, reject) => {
+      return reject({
+        reason: error.message,
+        code: '422'
+      });
+    });
+  };
+  
   // Return a promise to the user based on their search query
   return giphyResult.then(gip => {
     return riffsyResult.then(rif => {
@@ -21,21 +30,7 @@ module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
         ));
       });
     })
-    .catch(error => {
-      return new Promise((resolve, reject) => {
-        return reject({
-          reason: error.message,
-          code: '422'
-        });
-      });
-    });
+    .catch(error => gifPromise(error));
   })
-  .catch(error => {
-    return new Promise((resolve, reject) => {
-      return reject({
-        reason: error.message,
-        code: '422'
-      });
-    });
-  });
+  .catch(error => gifPromise(error));
 }
