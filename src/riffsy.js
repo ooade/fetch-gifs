@@ -1,7 +1,7 @@
-const axios = require('axios');
+import  axios from 'axios';
 
 module.exports = searchTerm => {
-   return axios.get(`https://api.riffsy.com/v1/search?key=LIVDSRZULELA&tag=${searchTerm}`)
+  return axios.get(`https://api.riffsy.com/v1/search?key=LIVDSRZULELA&tag=${searchTerm}`)
     .then(result => {
       let payload = result.data.results;
 
@@ -22,5 +22,5 @@ module.exports = searchTerm => {
           large_fixed: gif.preview
         };
       });
-    });
+  });
 }

@@ -1,7 +1,8 @@
-const axios = require('axios');
-const _shuffle = require('lodash/shuffle');
+import axios from 'axios';
+import { shuffle } from 'lodash';
 
 module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
+
   // Pass in the searchTerm or query to giphy and riffsy
   let giphyResult = require('./giphy')(searchTerm);
   let riffsyResult = require('./riffsy')(searchTerm);
@@ -14,13 +15,13 @@ module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
       });
     });
   };
-  
+
   // Return a promise to the user based on their search query
   return giphyResult.then(gip => {
     return riffsyResult.then(rif => {
       return new Promise((resolve, reject) => {
 
-        const gifs = _shuffle(gip.concat(rif)).slice(offset, limit);
+        const gifs = shuffle(gip.concat(rif)).slice(offset, limit);
 
         return resolve(Object.assign({},
           {

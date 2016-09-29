@@ -7,9 +7,8 @@
     "lodash": "^4.16.2"
   },
   "scripts": {
-    "build": "rimraf -rf build && babel src -d build && ./cleanup.sh && npm run minify && npm run remove-unused",
-    "minify": "cd build && minify * --output index.js",
-    "remove-unused": "rm -rf bui*/giph* bui*/ind* bui*/rif*"
+    "build": "rimraf -rf build && babel src -d build && ./src2build.sh && npm run minify",
+    "minify": "cd build && minify g* --output giphy.js && minify i* --output index.js && minify r* --output riffsy.js"
   },
   "author": "Ademola Adegbuyi <marhyorh@gmail.com>",
   "devDependencies": {
