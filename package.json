@@ -1,6 +1,6 @@
 {
   "name": "fetch-gifs",
-  "description": "Easily Search throught gifs based on search term",
+  "description": "Promise Based GIF image fetcher",
   "version": "0.1.7",
   "dependencies": {
     "axios": "^0.14.0",
@@ -20,13 +20,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marhyorh/FetchGifs.git"
+    "url": "git+https://github.com/marhyorh/fetch-gifs.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/marhyorh/FetchGifs/issues"
+    "url": "https://github.com/marhyorh/fetch-gifs/issues"
   },
-  "homepage": "https://github.com/marhyorh/FetchGifs",
+  "homepage": "https://github.com/marhyorh/fetch-gifs",
   "keywords": [
     "gif",
     "gifs",
