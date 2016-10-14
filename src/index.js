@@ -1,6 +1,3 @@
-import axios from 'axios';
-import { shuffle } from 'lodash';
-
 import giphy from './giphy';
 import riffsy from './riffsy';
 
@@ -24,7 +21,7 @@ module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
     return riffsyResult.then(rif => {
       return new Promise((resolve, reject) => {
 
-        const gifs = shuffle(gip.concat(rif)).slice(offset, limit);
+        const gifs = gip.concat(rif).slice(offset, limit);
 
         return resolve(Object.assign({},
           {

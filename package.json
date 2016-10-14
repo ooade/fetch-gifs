@@ -2,10 +2,6 @@
   "name": "fetch-gifs",
   "description": "Promise Based GIF image fetcher",
   "version": "0.1.8",
-  "dependencies": {
-    "axios": "^0.14.0",
-    "lodash": "^4.16.2"
-  },
   "scripts": {
     "build": "rimraf -rf build && babel src -d build && ./src2build.sh && npm run minify",
     "minify": "cd build && minify g* --output giphy.js && minify i* --output index.js && minify r* --output riffsy.js",

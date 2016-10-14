@@ -1,9 +1,8 @@
-import  axios from 'axios';
-
 module.exports = searchTerm => {
-  return axios.get(`https://api.riffsy.com/v1/search?key=LIVDSRZULELA&tag=${searchTerm}`)
-    .then(result => {
-      let payload = result.data.results;
+  return fetch(`https://api.riffsy.com/v1/search?key=LIVDSRZULELA&tag=${searchTerm}`)
+    .then(response => response.json())
+    .then(data => {
+      let payload = data.results;
 
        return payload.map(data => {
         // Grab all the data we need
