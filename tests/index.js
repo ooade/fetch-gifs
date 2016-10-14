@@ -31,9 +31,9 @@ test('lets join both gifs:', t => {
     );
   }).catch(e => {
     t.deepEqual(
-      e.code,
-      422,
-      'Index should return an unprocessed entity error (422) for rejected promise'
+      e,
+      'ENOTFOUND',
+      'Index should return an error for rejected promise'
     );
   });
 

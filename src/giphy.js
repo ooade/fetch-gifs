@@ -1,3 +1,5 @@
+require('isomorphic-fetch');
+
 module.exports = searchTerm => {
   // we don't need to supply a method since the default is GET
   return fetch(`https://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=dc6zaTOxFJmzC&limit=50`)

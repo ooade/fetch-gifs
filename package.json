@@ -30,5 +30,8 @@
     "riffsy",
     "react",
     "es6"
-  ]
+  ],
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  }
 }

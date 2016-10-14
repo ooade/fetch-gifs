@@ -9,10 +9,7 @@ module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
 
   const gifPromise = (error) => {
     return new Promise((resolve, reject) => {
-      return reject({
-        reason: error.message,
-        code: 422
-      });
+      return reject(error.code);
     });
   };
 
