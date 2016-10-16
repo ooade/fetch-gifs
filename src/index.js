@@ -19,6 +19,5 @@ module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
           more: gifs.length === limit - offset
         }
       );
-    })
-    .catch(error => error.code);
+    });
 }

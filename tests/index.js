@@ -31,7 +31,7 @@ test('lets join both gifs:', t => {
     );
   }).catch(e => {
     t.deepEqual(
-      e,
+      e.code,
       'ENOTFOUND',
       'Index should return an error for rejected promise'
     );
