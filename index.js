@@ -1,3 +1,1 @@
-const fetchGifs = require('./build');
-
-module.exports = fetchGifs;
+module.exports = require('./build/bundle.js');

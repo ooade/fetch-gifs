@@ -1,6 +1,6 @@
 require('isomorphic-fetch');
 
-module.exports = searchTerm => {
+export const riffsy = searchTerm => {
   return fetch(`https://api.riffsy.com/v1/search?key=LIVDSRZULELA&tag=${searchTerm}`)
     .then(response => response.json())
     .then(data => {

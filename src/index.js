@@ -1,5 +1,5 @@
-import giphy from './giphy';
-import riffsy from './riffsy';
+import { giphy } from './giphy';
+import { riffsy } from './riffsy';
 
 module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
 

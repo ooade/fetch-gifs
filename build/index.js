@@ -1,5 +1,29 @@
-"use strict"
-function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}var _giphy=require("./giphy"),_giphy2=_interopRequireDefault(_giphy),_riffsy=require("./riffsy"),_riffsy2=_interopRequireDefault(_riffsy)
-module.exports=function(e){var i=arguments.length<=1||void 0===arguments[1]?{}:arguments[1],r=i.offset,t=void 0===r?0:r,f=i.limit,u=void 0===f?30:f,n=(0,_giphy2.default)(e),o=(0,_riffsy2.default)(e)
-return Promise.all([n,o]).then(function(e){var i=e[0].concat(e[1]).slice(t,u)
-return Object.assign({},{data:i,more:i.length===u-t})}).catch(function(e){return e.code})}
+'use strict';
+
+var _giphy = require('./giphy');
+
+var _riffsy = require('./riffsy');
+
+module.exports = function (searchTerm) {
+  var _ref = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+  var _ref$offset = _ref.offset;
+  var offset = _ref$offset === undefined ? 0 : _ref$offset;
+  var _ref$limit = _ref.limit;
+  var limit = _ref$limit === undefined ? 30 : _ref$limit;
+
+  // Pass in the searchTerm or query to giphy and riffsy
+  var giphyResult = (0, _giphy.giphy)(searchTerm);
+  var riffsyResult = (0, _riffsy.riffsy)(searchTerm);
+
+  // Return a promise to the user based on their search query
+  return Promise.all([giphyResult, riffsyResult]).then(function (values) {
+
+    var gifs = values[0].concat(values[1]).slice(offset, limit);
+
+    return Object.assign({}, {
+      data: gifs,
+      more: gifs.length === limit - offset
+    });
+  });
+};

@@ -1,14 +1,14 @@
 import test from 'tape';
 
-import giphy from '../src/giphy';
-import riffsy from '../src/riffsy';
+import { giphy } from '../src/giphy';
+import { riffsy } from '../src/riffsy';
 
-const [g, r] = ['giffsy', 'riffsy'];
+const [g, r] = ['giphy', 'riffsy'];
 
 test(`fetching ${g} and ${r} gifs:`, t => {
   const searchTerm = 'anime';
 
-  const g_actual = giphy(searchTerm)
+  const g_actual = giphy(searchTerm);
   const r_actual = riffsy(searchTerm);
 
   const expected = new Promise(a => {});
