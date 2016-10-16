@@ -68,6 +68,9 @@ fetchGifs(name, { offset, limit }).then(res => {
 });
 ```
 
+### Not using NodeJS?
+You can also make use of fetch-gifs, just grab our latest release [here](https://raw.githubusercontent.com/marhyorh/fetch-gifs/master/build/bundle.js)
+
 ### Example
 - With React Redux
   - Heroku: https://fetch-gifs.herokuapp.com/
