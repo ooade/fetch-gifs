@@ -7,28 +7,18 @@ module.exports = (searchTerm, { offset = 0, limit = 30} = {}) => {
   let giphyResult = giphy(searchTerm);
   let riffsyResult = riffsy(searchTerm);
 
-  const gifPromise = (error) => {
-    return new Promise((resolve, reject) => {
-      return reject(error.code);
-    });
-  };
-
   // Return a promise to the user based on their search query
-  return giphyResult.then(gip => {
-    return riffsyResult.then(rif => {
-      return new Promise((resolve, reject) => {
+  return Promise.all([giphyResult, riffsyResult])
+    .then( values => {
 
-        const gifs = gip.concat(rif).slice(offset, limit);
+      const gifs = values[0].concat(values[1]).slice(offset, limit);
 
-        return resolve(Object.assign({},
-          {
-            data: gifs,
-            more: gifs.length === limit - offset
-          }
-        ));
-      });
+      return Object.assign({},
+        {
+          data: gifs,
+          more: gifs.length === limit - offset
+        }
+      );
     })
-    .catch(error => gifPromise(error));
-  })
-  .catch(error => gifPromise(error));
+    .catch(error => error.code);
 }
