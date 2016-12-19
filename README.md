@@ -1,5 +1,5 @@
 # FetchGifs
-[![Build Status](https://travis-ci.org/marhyorh/fetch-gifs.svg?branch=master)](https://travis-ci.org/marhyorh/fetch-gifs)
+[![Build Status](https://travis-ci.org/ooade/fetch-gifs.svg?branch=master)](https://travis-ci.org/ooade/fetch-gifs)
 
 We help you fetch your GIFs, just pass in the search term and you are good to go!
 Fetch-gif requires a search term and optional arguments(offset and limit) and returns a [Promise](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise)!
@@ -69,12 +69,12 @@ fetchGifs(name, { offset, limit }).then(res => {
 ```
 
 ### Not using NodeJS?
-You can also make use of fetch-gifs, just grab our latest release [here](https://raw.githubusercontent.com/marhyorh/fetch-gifs/master/build/bundle.js)
+You can also make use of fetch-gifs, just grab our latest release [here](https://raw.githubusercontent.com/ooade/fetch-gifs/master/build/bundle.js)
 
 ### Example
 - With React Redux
   - Heroku: https://fetch-gifs.herokuapp.com/
-  - GitHub: https://github.com/marhyorh/react-gif-finder
+  - GitHub: https://github.com/ooade/react-gif-finder
 
 ## Contributing
 Contributing to this repo is simple. We prefer single quotes, descriptive commit messages, commiting to a new branch indicating what changed e.g fix/fixed-async-flow, feature/added-test, feat/added-test. Push the new branch!
