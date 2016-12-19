@@ -1,7 +1,7 @@
 {
   "name": "fetch-gifs",
   "description": "Promise Based GIF image fetcher",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "scripts": {
     "build": "rimraf -rf build && babel src -d build && gulp compile && ./cleanup.sh && npm run minify",
     "minify": "babel build -d build && gulp uglify",
