@@ -1,4 +1,5 @@
 # FetchGifs
+[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 [![Build Status](https://travis-ci.org/ooade/fetch-gifs.svg?branch=master)](https://travis-ci.org/ooade/fetch-gifs)
 
 We help you fetch your GIFs, just pass in the search term and you are good to go!
